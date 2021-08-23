@@ -56,19 +56,11 @@ func main() {
 	WG := new(sync.WaitGroup)
 	ips := make(chan string, params.nThreads)
 
-	// auxiliary function
-
 	ipRange, err := getIPbyCIDR(params.cidr)
 	if err != nil {
 		panic("There was an error on the CIDR")
 	}
 
-	// start workers
-	// for i := 0; i < params.nThreads; i++ {
-	// 	go worker(ips, WG)
-	// }
-
-	//add the IPs to the channel
 	for _, ip := range ipRange {
 		ips <- ip
 		WG.Add(1)

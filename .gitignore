@@ -8,3 +8,6 @@
 *.test
 
 *.out
+
+!binary/.gitkeep
+binary/*

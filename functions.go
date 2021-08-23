@@ -12,8 +12,8 @@ type Params struct {
 }
 
 func ParseOpts(args []string) (PARAMS Params) {
-	if len(args) <= 3 || args[1] != "-cidr" {
-		fmt.Printf("Usage %s -cidr <CIDR RANGE>", args[0])
+	if len(args) < 3 || args[1] != "-cidr" {
+		fmt.Printf("Usage %s -cidr <CIDR RANGE> [-t <threads>]\n", args[0])
 		os.Exit(1)
 	}
 	flag.StringVar(&PARAMS.cidr, "cidr", "", "IP range in CIDR format. Example: 192.168.0.1/24")
