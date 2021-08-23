@@ -9,5 +9,6 @@
 
 *.out
 
-!binary/.gitkeep
-binary/*
+!/binary/
+/binary/*
+!/binary/.gitkeep
